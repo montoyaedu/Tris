@@ -31,10 +31,12 @@ mark_e getWinner(int* grid) {
         {2,4,6}
     };
 
-    mark_e retval = verifyLine(grid, winnerLines[7]);
-    if (retval != None) {
-        return retval;
-    } 
+    for (int i = 0; i < 8; i++) {
+        mark_e retval = verifyLine(grid, winnerLines[i]);
+        if (retval != None) {
+            return retval;
+        }
+    }
 
     return None;
 }

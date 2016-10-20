@@ -7,7 +7,7 @@ Usage
 =====
 
 `````C++
-#include "Tris.h"
+#include "TrisImpl.h"
 #include <stdlib.h>
 #include <assert.h>
 

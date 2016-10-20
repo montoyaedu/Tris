@@ -1,4 +1,4 @@
-all: TrisTest
+all: TrisTest test
 
 clean:
 	rm -f *.o

@@ -1,4 +1,4 @@
-all: TrisTest test
+all: TrisTest test TrisGame
 
 clean:
 	rm -f *.o
@@ -7,8 +7,11 @@ clean:
 .o:
 	cc -c $@.c
 
-TrisTest: TrisTest.c TrisImpl.o
-	cc -o $@ $@.c *.o
+TrisTest: TrisTest.o TrisImpl.o
+	cc -o $@ TrisTest.o TrisImpl.o
+
+TrisGame: TrisGame.o TrisImpl.o
+	cc -o $@ TrisGame.o TrisImpl.o
 
 test: TrisTest
 	./TrisTest

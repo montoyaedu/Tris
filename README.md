@@ -6,7 +6,7 @@ A tris (italian for tic tac toe) implementation using ansi c and TDD
 Usage
 =====
 
-`````
+`````C++
 #include "Tris.h"
 #include <stdlib.h>
 #include <assert.h>

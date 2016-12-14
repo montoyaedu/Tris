@@ -3,6 +3,14 @@ Tris
 
 A tris (italian for tic tac toe) implementation using ansi c and TDD
 
+Requisites
+==========
+
+* gcc
+* GNU make
+* gcov
+* gcovr
+
 Usage
 =====
 
@@ -58,3 +66,15 @@ Execute Tests
 `````
 make test
 `````
+
+View Coverage Results
+=====================
+
+`````
+open gcovr-report-html/coverage.html
+`````
+
+TODO
+====
+
+Publish results to SonarQube.

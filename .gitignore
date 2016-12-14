@@ -1,3 +1,6 @@
 /TrisTest
 /TrisGame
 /*.o
+/*.gc*
+/TrisTest.dSYM/
+/gcovr-report-html/

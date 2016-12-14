@@ -1,3 +1,3 @@
 #!/bin/sh
 make clean all
-rm -fr *.o
+make clean0

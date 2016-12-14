@@ -1,15 +1,23 @@
 all: TrisTest test TrisGame
 
-clean:
+clean0:
 	rm -f *.o
+	rm -fr TrisTest.dSYM
+	rm -f *.gc*
+
+clean: clean0
 	rm -f TrisTest
 	rm -f TrisGame
 
-TrisTest: TrisTest.o TrisImpl.o
-	cc -o $@ TrisTest.o TrisImpl.o
+TrisTest: TrisTest.c TrisImpl.c
+	gcc -g -Wall -fprofile-arcs -ftest-coverage -o $@ TrisTest.c TrisImpl.c
 
 TrisGame: TrisGame.o TrisImpl.o
-	cc -o $@ TrisGame.o TrisImpl.o
+	gcc -o $@ TrisGame.o TrisImpl.o
 
 test: TrisTest
 	./TrisTest
+	gcov -cf TrisImpl.c
+	rm -fr gcovr-report-html
+	mkdir gcovr-report-html
+	gcovr -r . --html --html-details -o gcovr-report-html/coverage.html

@@ -1,6 +1,11 @@
 Tris
 ====
 
+Status
+======
+
+[coverage status](https://montoyaedu.github.io/Tris/coverage.html)
+
 A tris (italian for tic tac toe) implementation using ansi c and TDD
 
 Requisites

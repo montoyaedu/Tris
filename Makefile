@@ -4,9 +4,6 @@ clean:
 	rm -f *.o
 	rm -f TrisTest
 
-.o:
-	cc -c $@.c
-
 TrisTest: TrisTest.o TrisImpl.o
 	cc -o $@ TrisTest.o TrisImpl.o
 

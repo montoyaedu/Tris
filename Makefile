@@ -17,7 +17,9 @@ TrisGame: TrisGame.o TrisImpl.o
 
 test: TrisTest
 	./TrisTest
-	gcov -cf TrisImpl.c
+	gcov -bcf TrisImpl.c
 	rm -fr gcovr-report-html
 	mkdir gcovr-report-html
 	gcovr -r . --html --html-details -o gcovr-report-html/coverage.html
+	gcovr -r . --xml -o gcovr-report-html/coverage.xml
+	gcovr -r .

@@ -1,8 +1,7 @@
 language: c
 
-before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get -qq install -y gcovr
-
 script:
- - make clean all
+ - make clean TrisTest test TrisGame
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

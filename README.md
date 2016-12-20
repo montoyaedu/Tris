@@ -4,7 +4,11 @@ Tris
 Status
 ======
 
-[coverage status](https://montoyaedu.github.io/Tris/coverage.html)
+[![Build Status](https://travis-ci.org/montoyaedu/Tris.svg?branch=master)](https://travis-ci.org/montoyaedu/Tris)
+
+[![codecov](https://codecov.io/gh/montoyaedu/Tris/branch/master/graph/badge.svg)](https://codecov.io/gh/montoyaedu/Tris)
+
+[gcovr coverage status](https://montoyaedu.github.io/Tris/coverage.html)
 
 A tris (italian for tic tac toe) implementation using ansi c and TDD
 

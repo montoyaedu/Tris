@@ -10,10 +10,10 @@ clean: clean0
 	rm -f TrisGame
 
 TrisTest: TrisTest.c TrisImpl.c
-	gcc -g -Wall -fprofile-arcs -ftest-coverage -o $@ TrisTest.c TrisImpl.c
+	gcc -std=c99 -g -Wall -fprofile-arcs -ftest-coverage -o $@ TrisTest.c TrisImpl.c
 
 TrisGame: TrisGame.o TrisImpl.o
-	gcc -o $@ TrisGame.o TrisImpl.o
+	gcc -std=c99 -o $@ TrisGame.o TrisImpl.o
 
 test: TrisTest
 	./TrisTest

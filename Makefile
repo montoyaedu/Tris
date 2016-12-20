@@ -12,8 +12,8 @@ clean: clean0
 TrisTest: TrisTest.c TrisImpl.c
 	gcc -std=c99 -O0 -g -Wall -fprofile-arcs -ftest-coverage -o $@ TrisTest.c TrisImpl.c
 
-TrisGame: TrisGame.o TrisImpl.o
-	gcc -std=c99 -O0 -o $@ TrisGame.o TrisImpl.o
+TrisGame: TrisGame.c TrisImpl.c
+	gcc -std=c99 -O0 -o $@ TrisGame.c TrisImpl.c
 
 test: TrisTest
 	./TrisTest

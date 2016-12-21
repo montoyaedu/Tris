@@ -13,10 +13,7 @@ mark_e verifyLine(int* grid, int* line) {
             completed++;
         }
     }
-    if (completed == SIZE) {
-        return first;
-    }
-    return None;
+    return first;
 }
 
 mark_e getWinner(int* grid) {

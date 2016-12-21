@@ -6,6 +6,46 @@
 int availableTests = 0;
 int tests = 0;
 
+void testCannotCallGetIfTrisHasNotBeenInitialized() {
+    tris_t* t = (tris_t*) calloc(1, sizeof(tris_t));
+    assert(t->initialized == 0);
+    mark_e mark = get(t, 0, 0);
+    assert(mark == -1);
+    tests++;
+}
+
+void testCannotCallAddIfTrisHasNotBeenInitialized() {
+    tris_t* t = (tris_t*) calloc(1, sizeof(tris_t));
+    assert(t->initialized == 0);
+    int rc = add(t, Cross, 0, 0);
+    assert(rc == -1);
+    tests++;
+}
+
+void testCannotCallAddIfThereIsAWinner() {
+    tris_t* t = (tris_t*) calloc(1, sizeof(tris_t));
+    new_game(t);
+    assert(t->initialized != 0);
+    //force winner
+    assert(0 == add(t, Cross, 0, 0));
+    assert(t->winner == None);
+    assert(0 == add(t, Nought, 0, 1));
+    assert(t->winner == None);
+    assert(0 == add(t, Cross, 0, 2));
+    assert(t->winner == None);
+    assert(0 == add(t, Nought, 1, 0));
+    assert(t->winner == None);
+    assert(0 == add(t, Cross, 1, 1));
+    assert(t->winner == None);
+    assert(0 == add(t, Nought, 1, 2));
+    assert(t->winner == None);
+    assert(0 == add(t, Cross, 2, 0));
+    assert(t->winner == Cross);
+    int rc = add(t, Cross, 0, 0);
+    assert(rc == -1);
+    tests++;
+}
+
 void testTrisHasBeenInitialized() {
     tris_t* t = (tris_t*) calloc(1, sizeof(tris_t));
     new_game(t);
@@ -167,7 +207,10 @@ void testCanDetectAnotherWonGame() {
 }
 
 int main() {
-    availableTests = 12;
+    availableTests = 15;
+    testCannotCallGetIfTrisHasNotBeenInitialized();
+    testCannotCallAddIfTrisHasNotBeenInitialized();
+    testCannotCallAddIfThereIsAWinner();
     testTrisHasBeenInitialized();
     testTrisBoardIsEmpty();
     testFirstPlayerIsCross();

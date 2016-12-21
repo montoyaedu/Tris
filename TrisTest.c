@@ -167,7 +167,7 @@ void testCanDetectAnotherWonGame() {
 }
 
 int main() {
-    availableTests = 11;
+    availableTests = 12;
     testTrisHasBeenInitialized();
     testTrisBoardIsEmpty();
     testFirstPlayerIsCross();
@@ -179,6 +179,7 @@ int main() {
     testCannotAddIntoAnOccupiedBox();
     testCanDetectWonGame();
     testCanDetectAnotherWonGame();
+    testCannotAddTwoCrossesConsecutively();
     fprintf(stdout, "%d of %d tests completed\n", tests, availableTests);
     return 0;
 }

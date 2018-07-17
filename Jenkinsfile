@@ -1,9 +1,11 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile true
+  }
   stages {
     stage('compile') {
       steps {
-        sh 'echo Hello, Tris!'
+        sh 'echo Hello, OK=$OK!'
       }
     }
   }

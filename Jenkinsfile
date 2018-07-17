@@ -1,14 +1,9 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile'
-    }
-
-  }
+  agent any
   stages {
     stage('compile') {
       steps {
-        sh 'make clean all test'
+        sh 'echo Hello, Tris!'
       }
     }
   }
